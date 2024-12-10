@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    text-align: center;
+}
+
+form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #512da8;
+}
+
+form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #f9f9f9;
+    transition: 0.3s;
+}
+
+form input:focus,
+form select:focus {
+    border-color: #512da8;
+    outline: none;
+    background: #fff;
+}
+
+form .tet {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+form .tet label {
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+form input[type="radio"] {
+    margin-right: 5px;
+}
+
+form input[type="submit"],
+form input[type="reset"] {
+    background-color: #512da8;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="reset"] {
+    background-color: #888;
+}
+
+form input[type="submit"]:hover {
+    background-color: #5c6bc0;
+}
+
+form input[type="reset"]:hover {
+    background-color: #666;
+}
+
+form h4 {
+    color: red;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+form h4 span {
+    font-weight: bold;
+    font-size: 16px;
+}
+
