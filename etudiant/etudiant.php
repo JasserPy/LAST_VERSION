@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion Étudiants</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styleinterne.css">
     <style>
         body {
             background: linear-gradient(to right, #c9d6ff, #e2e2e2);
@@ -37,9 +38,19 @@
         }
     </style>
 </head>
-
+<header>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../homepage.html">
+                <img src="../img/img.png" alt="ISIMA home" class="navbar-logo">
+                <h2>Home</h2>
+            </a>
+        </div>
+    </nav>
+</header>
 <body>
     <div class="container">
+        <br><br>
         <h1 class="text-center my-4">Gestion des Étudiants</h1>
         <form method="post" class="d-flex justify-content-center align-items-center mb-4 gap-3">
             <input type="text" name="cin1" id="cin1" class="form-control w-25" placeholder="CIN d'étudiant">

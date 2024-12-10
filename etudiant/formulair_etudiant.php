@@ -14,11 +14,9 @@ if (isset($_POST['cin'])) {
     $datee = $_POST['date'];
     $classe = $_POST['classe'];
 
-    // Validation of form fields
     if (empty($cin) || empty($id) || empty($prenom) || empty($sexe) || empty($datee) || empty($classe)) {
         echo "<h4><span style='color:red;'>Veuillez remplir tous les champs.</span></h4>";
     } else {
-        // Establishing database connection
         $bdname = "localhost";
         $username = "root";
         $password = "";
@@ -29,14 +27,12 @@ if (isset($_POST['cin'])) {
             die("Connection failed: " . $connection->connect_error);
         }
 
-        // Check if CIN already exists in the database
         $checkCinQuery = "SELECT * FROM etudiant WHERE cin='$cin' AND id != '$id'";
         $result = $connection->query($checkCinQuery);
 
         if ($result->num_rows > 0) {
             echo "<h4><span style='color:red;'>Ce CIN est déjà utilisé par un autre étudiant.</span></h4>";
         } else {
-            // Update the student's information
             $sql = "UPDATE etudiant SET cin='$cin', prenom='$prenom', sexe='$sexe', datee='$datee', classe='$classe' WHERE id='$id'";
 
             if ($connection->query($sql)) {
@@ -57,6 +53,16 @@ if (isset($_POST['cin'])) {
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles/style_formulaire.css">
 </HEAD>
+<header>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../homepage.html">
+                <img src="../img/img.png" alt="ISIMA home" class="navbar-logo">
+                <h2>Home</h2>
+            </a>
+        </div>
+    </nav>
+</header>
 <BODY>
     <form method="post">
         <div>
@@ -76,7 +82,6 @@ if (isset($_POST['cin'])) {
             <input type="date" name="date" id="date" value=""><br>
             <label>CLASSE :</label>
             <select id="select" name="classe">
-                <option value="null" selected>Null</option>
                 <option value="LCE">LCE</option>
                 <option value="LCS">LCS</option>
                 <option value="LBC">LBC</option>

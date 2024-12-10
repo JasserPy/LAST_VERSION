@@ -9,7 +9,7 @@
                 if($mysqli->connect_error){
                 die("connection failed: ". $mysqli->connect_error);
                 }
-                $id="E".(ord($nom)+ord($email))*28;
+                $id="E".(ord($nom)+ord($email)-ord($passwordd))*11;
                 }
 
                 ///
@@ -27,11 +27,22 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>ISIMA</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
+<header>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../homepage.html">
+                <img src="../img/img.png" alt="ISIMA home" class="navbar-logo">
+                <h2>Home</h2>
+            </a>
+        </div>
+    </nav>
+</header>
 
 <body>
     <div class="container" id="container">
@@ -42,7 +53,7 @@
                 <input type="text" placeholder="Name *" name="nom" value="">
                 <input type="email" placeholder="Email *" name="email" value="">
                 <input type="password" placeholder="password *" name="password" value="">
-                <input type="password" placeholder="password configuration*" name="passwordconfig" value="" >
+                <input type="password" placeholder="password configuration*" name="passwordconfig" value="">
                 <button id="sign-up">sign-uP</button>
                 <?php 
 if (isset($_POST['nom'])) {
@@ -82,7 +93,7 @@ if (isset($_POST['nom'])) {
 }
 ?>
 
-        </form>
+            </form>
         </div>
         <div class="form-container sign-in" id="sign-in">
             <form method="post">
@@ -93,7 +104,7 @@ if (isset($_POST['nom'])) {
                 <br>
                 <button id="login">sign-in</button>
                 <h4>
-                <?php
+                    <?php
                 if(isset($_POST['emails'])){
                     if (empty($emails) || empty($passwords)) {
                         echo "<h4 style='color:red;'>Tous les champs sont obligatoires</h4>";
@@ -117,7 +128,7 @@ if (isset($_POST['nom'])) {
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-plan toggle-left">
-                   
+
                     <h1>
                         Hello Student
                     </h1>
@@ -125,7 +136,7 @@ if (isset($_POST['nom'])) {
                     <button class="hidden" id="login1">sign-in</button>
                 </div>
                 <div class="toggle-plan toggle-right">
-                <h1>
+                    <h1>
                         welcome Back
                     </h1>
                     <p>enter your personal details to use all of site fetures</p>
@@ -136,6 +147,7 @@ if (isset($_POST['nom'])) {
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
 <?php
 
